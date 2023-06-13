@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;500&display=swap');
+
+
+.html-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    pointer-events: none;
+  }
+  
+  .overlay-content {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+    list-style: none;
+}
+
+.App {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+     overflow: hidden;
+}
+
+h2 {
+    color: black;
+    text-align: center;
+}
+
+p {
+    color: black;
+    text-align: left;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+.primary-button {
+    padding: 10px 20px;
+
+    background-color: black;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.secondary-button {
+    background: none;
+    border: none;
+    color: black;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+
+.close-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 35px;
+    height: 35px;
+
+    background: rgb(84, 84, 84);
+    backdrop-filter: blur(5px);
+    border: none;
+    border-radius: 10px;
+    opacity: .5;
+    cursor: pointer;
+    transition: .1s;
+}
+
+.close-button:hover {
+    opacity: 1;
+}
+
+.close-button::before {
+    content: '';
+    position:absolute;
+    left: 5px;
+    top: 17px;
+
+    width: 25px;
+    height: 2px;
+
+    background-color: white;
+    border: none;
+
+    transform: rotate(45deg)  ;
+}
+
+.close-button::after {
+    content: '';
+    position:absolute;
+    left: 5px;
+    top: 17px;
+
+    width: 25px;
+    height: 2px;
+
+    background-color: white;
+    border: none;
+    transform: rotate(-45deg) ;
+}
+
+.red-button {
+    padding: 10px 20px;
+
+    width: fit-content;
+    height: fit-content;
+    background: linear-gradient(90deg, red, rgb(246, 81, 81));
+    border: none;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.blue-button {
+    padding: 10px 20px;
+
+    width: fit-content;
+    height: fit-content;
+    background: linear-gradient(90deg, rgb(61, 114, 247), rgb(24, 66, 234));
+    border: none;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+
+.red-button:active {
+    background-color: white;
+}
+
+.start-button {
+    position: absolute;
+
+    left: 20px;
+    bottom: 20px;
+    right: 20px;
+    transition: 2s;
+}
+
+.start-button.closed {
+    transform: scale(0);
+    opacity: 0;
+}
+
+.skip-button {
+    position: relative;
+    margin-right: 20px;
+    align-self: flex-end;
+}
+
+.skip-button::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    left: 120%;
+    top: 42%;
+
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    transform:  rotate(45deg);
+}
+
+.white-popup {
+    position: absolute;
+    padding: 10px 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    left: 50%;
+    top: 50%;
+    background-color: white;
+
+    border-radius: 10px;
+    transform: translate(-50%,-50%);
+    transition: 1s;
+}
+
+.white-popup.closed {
+    transform: translate(-50%,-50%) scale(0);
+    opacity: 0;
+}
+
+.gif {
+    width: 80%;
+    margin: auto;
+}
+
+
+
+
