@@ -1,4 +1,6 @@
 const express = require("express");
+require('dotenv').config();
+
 const app = express();
 const mongoose = require("mongoose");
 const cors = require('cors')
@@ -12,7 +14,7 @@ const ProductModel = require("./models/Products");
 const OrderModel = require("./models/Orders");
 
 
-mongoose.connect("mongodb+srv://assylanakhanuly:1397268450Zxc@flowercluster.uavairo.mongodb.net/flowershop?retryWrites=true&w=majority")
+mongoose.connect(process.env.MONGO_CONNECTION)
 .then(() => console.log("Successful connection to the database"))
 .catch((e) => console.log("Error to the connection to the database"))
 app.listen(3001, () => {
