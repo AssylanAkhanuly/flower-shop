@@ -11,7 +11,7 @@ import { gsap } from 'gsap';
 
 export function Bouquet(props) {
   const { nodes, materials } = useGLTF('/GLTFs/Bouquet.gltf')
-  const {bouquetVisible, setState, setProductListVisible, setCurrentCategory} = props
+  const {move, setMove, bouquetVisible, setState, setProductListVisible, setCurrentCategory} = props
   const bouquetRef = useRef();
   const {scene} = useThree();
   const [outline, setOutline] = useState(false)
@@ -42,6 +42,18 @@ export function Bouquet(props) {
       }
     })
   }
+
+  useEffect(() => {
+    console.log(move)
+    let dir = 20;
+    if(!move) dir = -20
+    if(bouquetRef.current)
+      gsap.to(bouquetRef.current.position, {
+        z: bouquetRef.current.position.z + dir,
+        duration: 2,
+        ease: "power3.inOut"
+      })
+  }, [move]);
 
   const Add = () => {
     bouquetRef?.current?.traverse(child => {

@@ -1,10 +1,45 @@
 
+section{
+    display: none;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 999;
+}
+
+
+.form-box{
+
+
+    position: relative;
+
+    
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
 .form-value {
-    min-height: 300px;
+    padding: 10px 20px;
+    max-height: 500px;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     transition: 0.5s;
+
 }
 
 .order-list-item {
@@ -14,12 +49,12 @@
     gap: 5px;
 
     border-top: 1px solid grey;
-
+    transition: .2s;
 }
 
-
-
-
+.order-list-item.deleted {
+    max-height: 0;
+}
 .order-list-item-img {
     display: block;
     width: 150px;
@@ -41,7 +76,7 @@
     text-align: center;
     font-size: 16px;
     background: transparent;
-    border: 1px soldi grey;
+    border: 1px solid grey;
     border-radius: 10px;
 }
 
@@ -55,20 +90,43 @@
     justify-content: space-between;
 }
 
-.order-receiver {
-    display: none;
-    margin-left: calc(100% + 10px);
-    margin-right: calc(-100% - 10px);
-    padding: 10px 0;
+.delete-button {
+    padding: 3px 3px 2px 3px;
+    background-color: rgb(255, 120, 120);
+    border-radius: 5spx;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: .2s;
+}
 
-    border-top: 1px solid grey;
+.delete-button:hover {
+    background-color: white;
 }
 
 .order-Button {
     width: 100%;
-    margin-bottom: 5px;
+    margin: 10px 0;
 }
 .tray-buttons {
     display: flex;
     gap: 5px;
 }
+
+.error-text {
+    color: red;
+    text-align: center;
+}
+
+.success-text {
+    color: green;
+    text-align: center;
+}
+
+.empty-tray-container {
+    padding: 20px 40px;
+}
+.empty-text {
+    color: black;
+}
+

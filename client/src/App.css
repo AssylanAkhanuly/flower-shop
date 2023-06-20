@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;500&display=swap');
 
 
+:root {
+    --first-color: #f5f5dc;
+    --second-color: #F5C5C4;
+    --third-color: #C4E0F5;
+    --forth-color: #FAF3D5;
+}
+
 .html-overlay {
     position: fixed;
     top: 50%;
@@ -16,6 +23,25 @@
     border-radius: 5px;
   }
 
+  ::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #d4d4d4;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .2) inset;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #939393;
+    border-radius: 8px;
+    border: 3px solid #d4d4d4;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #7c7c7c;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -28,7 +54,7 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-    background-color: black;
+    background-color: var(--first-color);
      overflow: hidden;
 }
 
@@ -47,16 +73,29 @@ a{
     text-decoration: none;
 }
 
+input {
+    background: rgb(208, 208, 208);
+    border: 1px solid black;
+    padding: 2px 4px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
 .primary-button {
     padding: 10px 20px;
-
-    background-color: black;
+    margin: 10px 0 5px 0;
+    background-color: var(--second-color);
     border: none;
     border-radius: 10px;
-    color: white;
+    color: black;
     font-weight: bold;
     letter-spacing: 1px;
     cursor: pointer;
+    text-align: center;
+    width: 100%;
+}
+.primary-button:active {
+    background-color: white;
 }
 
 .secondary-button {
@@ -212,6 +251,7 @@ a{
     width: 80%;
     margin: auto;
 }
+
 
 
 

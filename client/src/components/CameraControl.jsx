@@ -12,13 +12,14 @@ function CameraControl({state}) {
     {
         x: 0,
         y:7,
-        z:0,
+        z:-1,
     },
     {
-        x: -5,
-        y:5,
-        z:10,
-    }]
+        x: -3,
+        y:7,
+        z:-1,
+    },]
+    
     useEffect(() => {
         Zoom(state)
     }, [state])
@@ -31,6 +32,8 @@ function CameraControl({state}) {
             duration: 4,
             ease: "power3.inOut",
             })
+        
+
     }
   return (
     <mesh></mesh>
