@@ -10,7 +10,7 @@ import { gsap } from "gsap";
 import { useThree } from "@react-three/fiber";
 
 export function BouquetBox(props) {
-  const { nodes, materials } = useGLTF("/GLTFs/BouquetBox.gltf");
+  const { nodes, materials } = useGLTF("/BouquetBox.gltf");
   const {
     setState,
     bouquetBoxVisible,

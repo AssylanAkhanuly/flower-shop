@@ -10,7 +10,7 @@ import { EffectComposer, Outline, Select, Selection } from '@react-three/postpro
 import { gsap } from 'gsap';
 
 export function Bouquet(props) {
-  const { nodes, materials } = useGLTF('/GLTFs/Bouquet.gltf')
+  const { nodes, materials } = useGLTF('/Bouquet.gltf')
   const {move, setMove, bouquetVisible, setState, setProductListVisible, setCurrentCategory} = props
   const bouquetRef = useRef();
   const {scene} = useThree();

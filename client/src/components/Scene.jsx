@@ -5,7 +5,7 @@ import { useFrame, useThree } from '@react-three/fiber';
 import { gsap } from 'gsap';
 
 export function Scene(props) {
-  const { nodes, materials } = useGLTF('/GLTFs/Scene.gltf')
+  const { nodes, materials } = useGLTF('/Scene.gltf')
   const {scene} = useThree();
   const {sceneVisible} = props
   const sceneRef = useRef();
