@@ -79,7 +79,7 @@ function App() {
           ref={canvasRef}
           style={{ background: "#e6d1b6" }}
           dpr={[1, 2]}
-          camera={{ fov: 50, position: [40, 10, -5], far: 4000 }}
+          camera={{ fov: 50, position: [0, 20, -5], far: 4000 }}
         >
           <pointLight
             intensity={0.8}
@@ -98,7 +98,7 @@ function App() {
             <OrbitControls
               enableZoom={false}
               enableRotate={false}
-              target={[-10, 5, 4]}
+              target={[-9, 4.5, 2.5]}
               ref={orbitRef}
             />
             <Bouquet
@@ -109,7 +109,7 @@ function App() {
               setProductListVisible={setProductListVisible}
               bouquetVisible={bouquetVisible}
               orbitRef={orbitRef}
-              position={[-8, 3.5, 2.5]}
+              position={[-8, 3.5, 42.5]}
             />
             <Scene
               scale={[0.08,0.08,0.08]}

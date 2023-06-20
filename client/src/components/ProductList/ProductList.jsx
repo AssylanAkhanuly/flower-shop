@@ -11,7 +11,7 @@ function ProductList({
   setTrayVisible
 }) {
   const [productList, setProductList] = useState([]);
-
+  const [pending, setPending] = useState(false)
   useEffect(() => {
     if (productListVisible) RequestProducts();
     else Remove();
@@ -37,6 +37,8 @@ function ProductList({
     });
   };
   const RequestProducts = async () => {
+    Add();
+    setPending(true)
     try {
       if (currentCategory) {
         const response = await axios.get("/api/products/getProducts", {
@@ -44,11 +46,14 @@ function ProductList({
             category: currentCategory,
           },
         });
-        if (response) setProductList(response.data);
-        Add();
+        if (response) {
+          setProductList(response.data);
+          setPending(false)
+        }
       }
     } catch (e) {
       console.log(e);
+      setPending(false)
     }
   };
   return (
@@ -60,7 +65,8 @@ function ProductList({
         }}
         className="close-button"
       ></button>
-      <div className="categories">
+      { !pending ? 
+        <div className="categories">
         <div className="category">
           <h2 className="category-header">Top Sellers</h2>
           <ul className="category-list">
@@ -88,7 +94,10 @@ function ProductList({
             })}
           </ul>
         </div>
+      </div> : 
+      <div className="loading-circle">
       </div>
+      }
       <button
         onClick={() => setTrayVisible(true)}
         className="primary-button order-button"
