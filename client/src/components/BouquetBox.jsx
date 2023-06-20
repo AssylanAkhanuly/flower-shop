@@ -51,7 +51,7 @@ export function BouquetBox(props) {
         onPointerOut={() => setOutline(false)}
       >
         <Select enabled={outline}>
-          <group dispose={null}>
+          <group>
             <group
               position={[0.143, -0.628, -0.841]}
               rotation={[2.539, 0.52, 0.078]}
