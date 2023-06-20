@@ -16,7 +16,7 @@ import { BouquetBox } from "./components/BouquetBox";
 import Arrow from "./components/Arrow/Arrow";
 import Loader from "./components/Loader/Loader";
 function App() {
-  axios.defaults.baseURL = "http://localhost:3001";
+  axios.defaults.baseURL = "https://flower-shop-l3um.onrender.com/";
   const orbitRef = useRef();
   const canvasRef = useRef();
   const instructionRef = useRef();
