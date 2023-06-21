@@ -68,7 +68,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Suspense fallback={<Loader />}>
+      <Suspense fallback={<Loader />}>
         <Canvas
           ref={canvasRef}
           style={{ background: "#e6d1b6" }}
@@ -122,8 +122,7 @@ function App() {
             position={[-9, 4.2, 22.5]}
           />
         </Canvas>
-      </Suspense> */}
-      <Loader/>
+      </Suspense>
       {started && progress === 100 && (
         <>
           <SocialList />
