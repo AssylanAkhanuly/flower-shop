@@ -1,4 +1,4 @@
-import { Canvas} from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import "./App.css";
 import { Suspense, useEffect, useRef, useState } from "react";
 import { EnvironmentMap, OrbitControls, useProgress } from "@react-three/drei";
@@ -21,7 +21,6 @@ function App() {
   const orbitRef = useRef();
   const canvasRef = useRef();
   const { progress } = useProgress();
-  
 
   const [user, setUser] = useState();
 
@@ -35,13 +34,13 @@ function App() {
 
   useEffect(() => {
     try {
-      const storage = JSON.parse(localStorage.getItem("user"))
-      if(storage) setUser(storage)
-      console.log(storage)
-    } catch(e) {
-      console.log("Unable to get the user")
+      const storage = JSON.parse(localStorage.getItem("user"));
+      if (storage) setUser(storage);
+      console.log(storage);
+    } catch (e) {
+      console.log("Unable to get the user");
     }
-  }, [])
+  }, []);
 
   const Switch = ({ initialRef, finalRef }) => {
     if (initialRef)
@@ -61,11 +60,11 @@ function App() {
   };
 
   useEffect(() => {
-    if(progress === 100) {
-        setState(1);
-        setStarted(true);
+    if (progress === 100) {
+      setState(1);
+      setStarted(true);
     }
-  }, [progress])
+  }, [progress]);
 
   return (
     <div className="App">
@@ -88,51 +87,51 @@ function App() {
             shadow-camera-top={10}
             shadow-camera-bottom={-10}
           />
-          <EnvironmentMap preset="city"/>
+          <EnvironmentMap preset="city" />
           <CameraControl controlsRef={orbitRef} state={state} />
-            <OrbitControls
-              enableZoom={true}
-              enableRotate={false}
-              target={[-9, 4.5, 2.5]}
-              ref={orbitRef}
-            />
-            <Bouquet
-              move={move}
-              scale={[1.2,1.2,1.2]}
-              setMove={setMove}
-              setCurrentCategory={setCurrentCategory}
-              setState={setState}
-              setProductListVisible={setProductListVisible}
-              orbitRef={orbitRef}
-              position={[-9, 3.5, 2]}
-            />
-            <Scene
-              scale={[0.08,0.08,0.08]}
-              rotation={[0,-1.8,0]}
-              orbitRef={orbitRef}
-              canvasRef={canvasRef}
-              position={[-5, 0, 4]}
-            />
-            <BouquetBox
-              setCurrentCategory={setCurrentCategory}
-              setState={setState}
-              setProductListVisible={setProductListVisible}
-              move={move}
-              setMove={setMove}
-              scale={[1.3, 1.3, 1.3]}
-              position={[-9, 4.2, 22.5]}
-            />
+          <OrbitControls
+            enableZoom={true}
+            enableRotate={false}
+            target={[-9, 4.5, 2.5]}
+            ref={orbitRef}
+          />
+          <Bouquet
+            move={move}
+            scale={[1.2, 1.2, 1.2]}
+            setMove={setMove}
+            setCurrentCategory={setCurrentCategory}
+            setState={setState}
+            setProductListVisible={setProductListVisible}
+            orbitRef={orbitRef}
+            position={[-9, 3.5, 2]}
+          />
+          <Scene
+            scale={[0.08, 0.08, 0.08]}
+            rotation={[0, -1.8, 0]}
+            orbitRef={orbitRef}
+            canvasRef={canvasRef}
+            position={[-5, 0, 4]}
+          />
+          <BouquetBox
+            setCurrentCategory={setCurrentCategory}
+            setState={setState}
+            setProductListVisible={setProductListVisible}
+            move={move}
+            setMove={setMove}
+            scale={[1.3, 1.3, 1.3]}
+            position={[-9, 4.2, 22.5]}
+          />
         </Canvas>
       </Suspense>
-      {started && (
-        progress === 100 &&
+      {started && progress === 100 && (
         <>
-          <SocialList  />
+          <SocialList />
           <Sidebar
             setTrayVisible={setTrayVisible}
             selectedItems={selectedItems}
           />
           <Arrow
+            productListVisible={productListVisible}
             onClick={() => {
               setMove(0);
             }}
@@ -141,6 +140,7 @@ function App() {
             top={"50%"}
           />
           <Arrow
+            productListVisible={productListVisible}
             onClick={() => {
               setMove(1);
             }}
@@ -151,7 +151,7 @@ function App() {
       )}
       {selectedItems && (
         <ProductList
-        selectedItems={selectedItems}
+          selectedItems={selectedItems}
           setSelectedItems={setSelectedItems}
           currentCategory={currentCategory}
           setState={setState}

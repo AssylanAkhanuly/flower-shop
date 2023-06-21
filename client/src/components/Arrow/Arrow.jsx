@@ -1,9 +1,10 @@
 import "./arrow.css";
 import React from "react";
 
-function Arrow({left, top, ...props}) {
+function Arrow({left, top, productListVisible, ...props }) {
   return (
-    <div
+    <button
+    disabled={productListVisible}
     {...props}
       style={{
         ...props,
@@ -11,7 +12,7 @@ function Arrow({left, top, ...props}) {
         top,
       }}
       className="arrow"
-    ></div>
+    ></button>
   );
 }
 
