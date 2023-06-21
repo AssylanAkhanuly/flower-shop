@@ -128,7 +128,9 @@ function ProductList({
           </button>
         </div>
       ) : (
+        <div className="loading-circle-container">
         <div className="loading-circle"></div>
+        </div>
       )}
     </div>
   );

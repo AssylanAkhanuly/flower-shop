@@ -3,13 +3,12 @@
     display: none;
     justify-content: space-between;
     position: absolute;
-    padding: 10px 20px;
     right: 0;
     top: 100%;
-    left: 60px;
+    left: 62px;
     height: auto;
     bottom:-40%;
-
+    padding: 5px 10px;
     background: var(--first-color);
     backdrop-filter: blur(10px);
     border-radius: 10px 0 0 10px;
@@ -20,12 +19,17 @@
 .order-button {
     position: sticky;
     width: 100%;
-    bottom: -0px;
+}
+
+.categories {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 
 .category {
-    padding: 20px 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -34,7 +38,7 @@
 .category-header {
     color: var(--third-color);
     width: 100%;
-    text-align: right;
+    text-align: left;
 }
 
 .category-list {
@@ -42,10 +46,13 @@
     display: flex;
     gap: 10px;
     overflow-x: auto;
+    padding: 10px;
 }
 .category-list-item {
     position: relative;
-    min-width: 100px;
+    min-width: 120px;
+    width: 140px;
+    height: 240px;
     border: 1px solid grey;
     border-radius: 10px;
     background-color: white;
@@ -79,8 +86,8 @@
 }
 
 .category-list-item-img {
-    width: 120px;
-    height: 150px;
+    width: 150px;
+    height: 180px;
 
     border-bottom: 1px solid grey;
     object-fit: cover;
@@ -94,4 +101,51 @@
     text-align: center;
 }
 
+.loading-circle-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
+@media only screen and (max-width: 1028px) {
+    .category-list-item {
+        height: 270px;
+    }
+    .category-list-item-img {
+        height: 190px;
+        width: 150px;
+    }
+    .category-list {
+        padding: 15px 7px;
+    }
+    .category-list-item-desc  {
+        font-size: 18px;
+    }
+    .category-list-item-price {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .category-list {
+        padding: 10px 5px;
+    }
+
+    .category-list-item {
+        height: 180px;
+        width: 100px;
+    }
+    .category {
+        padding: 0px;
+    }
+    .category-list-item-img {
+        height: 120px;
+    }
+    .category-list-item-desc  {
+        font-size: 12px;
+    }
+    .category-list-item-price {
+        font-size: 12px;
+    }
+}

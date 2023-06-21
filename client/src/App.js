@@ -151,6 +151,7 @@ function App() {
       )}
       {selectedItems && (
         <ProductList
+        setTrayVisible={setTrayVisible}
           selectedItems={selectedItems}
           setSelectedItems={setSelectedItems}
           currentCategory={currentCategory}

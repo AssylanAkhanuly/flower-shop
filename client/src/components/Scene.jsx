@@ -33,23 +33,23 @@ export function Scene(props) {
         <mesh geometry={nodes['24'].geometry} material={materials['Glass_lamp.001']} position={[0, 0, -0.004]} />
         <mesh geometry={nodes['24001'].geometry} material={materials['Metal.002']} position={[0, 0, -0.004]} />
       </group>
-      <group position={[-7.056, 149.36, 50.495]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]}>
+      <group position={[-31.567, 146.251, 16.544]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]}>
         <mesh geometry={nodes['12002'].geometry} material={materials['Glass_lamp.001']} />
         <mesh geometry={nodes['12003'].geometry} material={materials['Metal.002']} />
       </group>
-      <group position={[-7.056, 149.36, 50.495]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]}>
+      <group position={[-31.567, 146.251, 16.544]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]}>
         <mesh geometry={nodes['15002'].geometry} material={materials['Glass_lamp.001']} />
         <mesh geometry={nodes['15003'].geometry} material={materials['Metal.002']} />
       </group>
-      <group position={[-7.056, 149.36, 50.495]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]}>
+      <group position={[-31.567, 146.251, 16.544]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]}>
         <mesh geometry={nodes['18002'].geometry} material={materials['Glass_lamp.001']} />
         <mesh geometry={nodes['18003'].geometry} material={materials['Metal.002']} />
       </group>
-      <group position={[-7.056, 149.36, 50.495]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]}>
+      <group position={[-31.567, 146.251, 16.544]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]}>
         <mesh geometry={nodes['19002'].geometry} material={materials['Glass_lamp.001']} />
         <mesh geometry={nodes['19003'].geometry} material={materials['Metal.002']} />
       </group>
-      <group position={[-7.056, 149.36, 50.495]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]}>
+      <group position={[-31.567, 146.251, 16.544]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]}>
         <mesh geometry={nodes['24002'].geometry} material={materials['Glass_lamp.001']} />
         <mesh geometry={nodes['24003'].geometry} material={materials['Metal.002']} />
       </group>
@@ -98,27 +98,27 @@ export function Scene(props) {
       </group>
       <mesh geometry={nodes.Cylinder001.geometry} material={materials['Material.004']} position={[-10.815, -5.714, 13.913]} rotation={[0, -1.197, 0]} scale={[116.922, 0.962, 116.922]} />
       <mesh geometry={nodes.Cylinder002.geometry} material={materials['Material.008']} position={[-5.293, 26.465, 55.512]} rotation={[-Math.PI, 0, -Math.PI]} scale={[-23.231, -17.504, -23.231]} />
-      <mesh geometry={nodes.Helix2301001.geometry} material={materials['Steel.001']} position={[-7.056, 149.36, 50.495]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
-      <mesh geometry={nodes.Helix2302001.geometry} material={materials['Steel.001']} position={[-7.056, 149.36, 50.495]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
-      <mesh geometry={nodes.Box2131640001.geometry} material={materials['Glass.001']} position={[-7.056, 149.36, 50.495]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
-      <mesh geometry={nodes.Helix2303001.geometry} material={materials['Steel.001']} position={[-7.056, 149.36, 50.495]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
-      <mesh geometry={nodes.Helix2304001.geometry} material={materials['Steel.001']} position={[-7.056, 149.36, 50.495]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
-      <mesh geometry={nodes.Helix2305001.geometry} material={materials['Steel.001']} position={[-7.056, 149.36, 50.495]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
-      <mesh geometry={nodes.Helix2306001.geometry} material={materials['Steel.001']} position={[-7.056, 149.36, 50.495]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
-      <mesh geometry={nodes.Helix2307001.geometry} material={materials['Steel.001']} position={[-7.056, 149.36, 50.495]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
-      <mesh geometry={nodes.Helix2308001.geometry} material={materials['Steel.001']} position={[-7.056, 149.36, 50.495]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
-      <mesh geometry={nodes.Helix2309001.geometry} material={materials['Steel.001']} position={[-7.056, 149.36, 50.495]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
-      <mesh geometry={nodes.Helix2310001.geometry} material={materials['Steel.001']} position={[-7.056, 149.36, 50.495]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
-      <mesh geometry={nodes.Box2131641001.geometry} material={materials['Glass.001']} position={[-7.056, 149.36, 50.495]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
-      <mesh geometry={nodes.Tube001001.geometry} material={materials['Ceramic.002']} position={[-7.056, 149.36, 50.495]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
-      <mesh geometry={nodes.Tube002001.geometry} material={materials['Ceramic.002']} position={[-7.056, 149.36, 50.495]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
-      <mesh geometry={nodes.Box2131642001.geometry} material={materials['Glass.001']} position={[-7.056, 149.36, 50.495]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
-      <mesh geometry={nodes.Tube003001.geometry} material={materials['Ceramic.002']} position={[-7.056, 149.36, 50.495]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
-      <mesh geometry={nodes.Box2131643001.geometry} material={materials['Glass.001']} position={[-7.056, 149.36, 50.495]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
-      <mesh geometry={nodes.Tube004001.geometry} material={materials['Ceramic.002']} position={[-7.056, 149.36, 50.495]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
-      <mesh geometry={nodes.Box2131644001.geometry} material={materials['Glass.001']} position={[-7.056, 149.36, 50.495]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
-      <mesh geometry={nodes.Tube005001.geometry} material={materials['Ceramic.002']} position={[-7.056, 149.36, 50.495]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
-      <mesh geometry={nodes.ChamferCyl001.geometry} material={materials['Metal.002']} position={[-7.056, 149.36, 50.495]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
+      <mesh geometry={nodes.Helix2301001.geometry} material={materials['Steel.001']} position={[-31.567, 146.251, 16.544]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
+      <mesh geometry={nodes.Helix2302001.geometry} material={materials['Steel.001']} position={[-31.567, 146.251, 16.544]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
+      <mesh geometry={nodes.Box2131640001.geometry} material={materials['Glass.001']} position={[-31.567, 146.251, 16.544]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
+      <mesh geometry={nodes.Helix2303001.geometry} material={materials['Steel.001']} position={[-31.567, 146.251, 16.544]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
+      <mesh geometry={nodes.Helix2304001.geometry} material={materials['Steel.001']} position={[-31.567, 146.251, 16.544]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
+      <mesh geometry={nodes.Helix2305001.geometry} material={materials['Steel.001']} position={[-31.567, 146.251, 16.544]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
+      <mesh geometry={nodes.Helix2306001.geometry} material={materials['Steel.001']} position={[-31.567, 146.251, 16.544]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
+      <mesh geometry={nodes.Helix2307001.geometry} material={materials['Steel.001']} position={[-31.567, 146.251, 16.544]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
+      <mesh geometry={nodes.Helix2308001.geometry} material={materials['Steel.001']} position={[-31.567, 146.251, 16.544]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
+      <mesh geometry={nodes.Helix2309001.geometry} material={materials['Steel.001']} position={[-31.567, 146.251, 16.544]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
+      <mesh geometry={nodes.Helix2310001.geometry} material={materials['Steel.001']} position={[-31.567, 146.251, 16.544]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
+      <mesh geometry={nodes.Box2131641001.geometry} material={materials['Glass.001']} position={[-31.567, 146.251, 16.544]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
+      <mesh geometry={nodes.Tube001001.geometry} material={materials['Ceramic.002']} position={[-31.567, 146.251, 16.544]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
+      <mesh geometry={nodes.Tube002001.geometry} material={materials['Ceramic.002']} position={[-31.567, 146.251, 16.544]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
+      <mesh geometry={nodes.Box2131642001.geometry} material={materials['Glass.001']} position={[-31.567, 146.251, 16.544]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
+      <mesh geometry={nodes.Tube003001.geometry} material={materials['Ceramic.002']} position={[-31.567, 146.251, 16.544]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
+      <mesh geometry={nodes.Box2131643001.geometry} material={materials['Glass.001']} position={[-31.567, 146.251, 16.544]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
+      <mesh geometry={nodes.Tube004001.geometry} material={materials['Ceramic.002']} position={[-31.567, 146.251, 16.544]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
+      <mesh geometry={nodes.Box2131644001.geometry} material={materials['Glass.001']} position={[-31.567, 146.251, 16.544]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
+      <mesh geometry={nodes.Tube005001.geometry} material={materials['Ceramic.002']} position={[-31.567, 146.251, 16.544]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
+      <mesh geometry={nodes.ChamferCyl001.geometry} material={materials['Metal.002']} position={[-31.567, 146.251, 16.544]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[0.012, 0.012, 0.006]} />
       <mesh geometry={nodes.Indoor_Plants_Collection_5_planterstand001.geometry} material={materials['wire_135006006.001']} position={[40.757, 8.714, 56.903]} rotation={[Math.PI / 2, 0, 2.358]} scale={0.292} />
       <mesh geometry={nodes.Indoor_Plants_Collection_5_pothos001.geometry} material={materials['Material.001']} position={[40.757, 8.714, 56.903]} rotation={[Math.PI / 2, 0, 2.358]} scale={0.292} />
       <mesh geometry={nodes.Indoor_Plants_Collection_5_soil4001.geometry} material={materials['wire_135006006.001']} position={[40.757, 8.714, 56.903]} rotation={[Math.PI / 2, 0, 2.358]} scale={0.292} />
