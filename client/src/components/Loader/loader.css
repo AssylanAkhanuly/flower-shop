@@ -34,6 +34,119 @@
     animation: rotate 2s infinite;
 }
 
+.bubble {
+  position:absolute;
+  left: 20%;
+  top: 80%;
+  width: 200px;
+  height: 200px;
+  box-shadow: inset 0 0 25px rgba(255, 255, 255, 25%);
+  border-radius: 50%;
+  animation: oscilate 2s infinite ease-in-out;
+}
+
+@keyframes oscilate {
+  0% {
+    transform: translate(-10%, 0);
+  }
+  50% {
+    transform: translate(10%, 0);
+  }
+  100% {
+    transform: translate(-10%, 0);
+  }
+}
+
+.first {
+  position: absolute;
+  left: 60%;
+  top: 50%;
+  zoom: 0.45;
+}
+
+.second {
+  position: absolute;
+  left: 90%;
+  top: 70%;
+  zoom: 0.8;
+}
+
+.third {
+  position: absolute;
+  left: 90%;
+  top: 70%;
+  zoom: 0.3;
+}
+.forth {
+  position: absolute;
+  left: 30%;
+  top: 90%;
+  zoom: 0.5;
+}
+
+.bubble::before {
+  content: '';
+  position: absolute;
+  top: 50px;
+  left: 45px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: white;
+  z-index: 10;
+  filter: blur(2px);
+}
+
+.bubble::after {
+  content: '';
+  position: absolute;
+  top: 80px;
+  left: 80px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  z-index: 10;
+  filter: blur(2px);
+}
+
+.bubble span {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.bubble span:nth-child(1) {
+  inset: 10px;
+  border-left: 15px solid #0fb4ff;
+  filter: blur(8px);
+}
+
+.bubble span:nth-child(2) {
+  inset: 10px;
+  border-right: 15px solid #ff4484;
+  filter: blur(8px);
+}
+
+.bubble span:nth-child(3) {
+  inset: 20px;
+  border-top: 15px solid #ffeb3b;
+  filter: blur(8px);
+}
+.bubble span:nth-child(4) {
+  inset: 30px;
+  border-left: 15px solid #ff4484;
+  filter: blur(12px);
+}
+.bubble span:nth-child(5) {
+  inset: 10px;
+  border-bottom: 15px solid #fff;
+  filter: blur(8px);
+  transform: rotate(330deg);
+}
+
+
+
+
 @keyframes rotate {
     0% {
         transform: rotate(0);
