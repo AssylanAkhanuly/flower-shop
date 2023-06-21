@@ -2,27 +2,49 @@ import React, { useEffect, useState } from "react";
 import "./productList.css";
 import { gsap } from "gsap";
 import axios from "axios";
+
+
+export const AddItem = (selectedItems, setSelectedItems, newItem) => {
+  console.log(newItem)
+  var foundIndex = selectedItems.findIndex(item => item._id === newItem._id)
+  var copyArray = [...selectedItems]
+  console.log(foundIndex)
+  if(!foundIndex) {
+    copyArray[foundIndex].quantity++
+  }
+  else {
+    copyArray = [...copyArray, {
+      ...newItem,
+      quantity: 1,
+    }]
+  }
+  setSelectedItems(copyArray)
+}
+
 function ProductList({
   productListVisible,
   setProductListVisible,
   setState,
   currentCategory,
   setSelectedItems,
-  setTrayVisible
+  setTrayVisible,
+  selectedItems,
 }) {
   const [productList, setProductList] = useState([]);
-  const [pending, setPending] = useState(false)
+  const [pending, setPending] = useState(false);
   useEffect(() => {
     if (productListVisible) RequestProducts();
     else Remove();
   }, [productListVisible]);
 
+  
+
   const Add = () => {
     gsap.to(".product-list", {
       display: "block",
-      left: "60%",
-      right: "0",
-      duration: 2,
+      bottom: "0%",
+      top: "60%",
+      duration: 1,
       ease: "power3.inOut",
     });
   };
@@ -30,15 +52,15 @@ function ProductList({
   const Remove = () => {
     gsap.to(".product-list", {
       display: "none",
-      left: "100%",
-      right: "-40%",
-      duration: 2,
+      bottom: "-40%",
+      top: "100%",
+      duration: 1,
       ease: "power3.inOut",
     });
   };
   const RequestProducts = async () => {
     Add();
-    setPending(true)
+    setPending(true);
     try {
       if (currentCategory) {
         const response = await axios.get("/api/products/getProducts", {
@@ -48,12 +70,12 @@ function ProductList({
         });
         if (response) {
           setProductList(response.data);
-          setPending(false)
+          setPending(false);
         }
       }
     } catch (e) {
       console.log(e);
-      setPending(false)
+      setPending(false);
     }
   };
   return (
@@ -65,45 +87,49 @@ function ProductList({
         }}
         className="close-button"
       ></button>
-      { !pending ? 
+      {!pending ? (
         <div className="categories">
-        <div className="category">
-          <h2 className="category-header">Top Sellers</h2>
-          <ul className="category-list">
-            {productList.map((product) => {
-              return (
-                <li
-                  onClick={() =>
-                    setSelectedItems((prev) => [
-                      ...prev,
-                      { ...product, quantity: 1 },
-                    ])
-                  }
-                  key={product._id}
-                  className="category-list-item"
-                >
-                  <img
-                    className="category-list-item-img"
-                    src={product.img}
-                    alt="error"
-                  />
-                  <p className="category-list-item-desc">{product.name}</p>
-                  <p className="category-list-item-price">{product.price} tg</p>
-                </li>
-              );
-            })}
-          </ul>
+          <div className="category">
+            <h2 className="category-header">Top Sellers</h2>
+            <ul className="category-list">
+              {productList.map((product) => {
+                return (
+                  <li
+                    onClick={() =>
+                      AddItem(selectedItems, setSelectedItems, product)
+                    }
+                    key={product._id}
+                    className="category-list-item"
+                  >
+                    <img
+                      className="category-list-item-img"
+                      src={product.img}
+                      alt="error"
+                    />
+                    {selectedItems.find((item) => item._id === product._id) && (
+                      <span className="category-list-item-quantity">
+                        {selectedItems.find((item) => item._id === product._id).quantity}
+                      </span>
+                    )}
+                    <p className="category-list-item-desc">{product.name}</p>
+                    <p className="category-list-item-price">
+                      {product.price} tg
+                    </p>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+          <button
+            onClick={() => setTrayVisible(true)}
+            className="primary-button order-button"
+          >
+            Order
+          </button>
         </div>
-      </div> : 
-      <div className="loading-circle">
-      </div>
-      }
-      <button
-        onClick={() => setTrayVisible(true)}
-        className="primary-button order-button"
-      >
-        Order
-      </button>
+      ) : (
+        <div className="loading-circle"></div>
+      )}
     </div>
   );
 }

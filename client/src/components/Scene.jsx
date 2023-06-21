@@ -1,52 +1,15 @@
 
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import { useGLTF } from '@react-three/drei'
-import { useFrame, useThree } from '@react-three/fiber';
-import { gsap } from 'gsap';
+import { useFrame } from '@react-three/fiber';
 
 export function Scene(props) {
   const { nodes, materials } = useGLTF('/Scene.gltf')
-  const {scene} = useThree();
-  const {sceneVisible} = props
-  const sceneRef = useRef();
 
   useFrame(({mouse}) => {
     props.orbitRef.current.setAzimuthalAngle(1.7+0.1*mouse.x)
     props.orbitRef.current.setPolarAngle(1.4+ 0.1*mouse.y)
   })
-
-  useEffect(() => {
-    if(sceneVisible) Add();
-    else Remove();
-  }, [sceneVisible])
-
-  const Remove = () => {
-    sceneRef?.current?.traverse(child => {
-      if(child.isMesh) {
-        gsap.to(child.material, {
-          transparent: true,
-          opacity: 0,
-          duration: 2,
-          onComplete: () => {
-            scene.remove(sceneRef.current)
-          }
-        })
-      }
-    })
-  }
-
-  const Add = () => {
-    sceneRef?.current?.traverse(child => {
-      if(child.isMesh) {
-        scene.add(sceneRef.current)
-        gsap.to(child.material, {
-          transparent: false,
-          opacity: 1,
-          duration: 2,
-        })
-      }
-    })
-  }
 
   return (
     <group {...props} dispose={null}>

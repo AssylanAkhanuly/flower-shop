@@ -1,4 +1,4 @@
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas} from "@react-three/fiber";
 import "./App.css";
 import { Suspense, useEffect, useRef, useState } from "react";
 import { EnvironmentMap, OrbitControls, useProgress } from "@react-three/drei";
@@ -15,20 +15,17 @@ import Tray from "./components/Tray/Tray";
 import { BouquetBox } from "./components/BouquetBox";
 import Arrow from "./components/Arrow/Arrow";
 import Loader from "./components/Loader/Loader";
+import SocialList from "./components/SocialList/SocialList";
 function App() {
   axios.defaults.baseURL = "https://flower-shop-l3um.onrender.com/";
   const orbitRef = useRef();
   const canvasRef = useRef();
-  const instructionRef = useRef();
   const { progress } = useProgress();
   
 
   const [user, setUser] = useState();
 
   const [started, setStarted] = useState(false);
-  const [shopVisible, setShopVisible] = useState(true);
-  const [bouquetVisible, setBouquetVisible] = useState(false);
-  const [sceneVisible, setSceneVisible] = useState(true);
   const [state, setState] = useState(0);
   const [selectedItems, setSelectedItems] = useState([]);
   const [productListVisible, setProductListVisible] = useState(false);
@@ -45,6 +42,7 @@ function App() {
       console.log("Unable to get the user")
     }
   }, [])
+
   const Switch = ({ initialRef, finalRef }) => {
     if (initialRef)
       gsap.to(initialRef, {
@@ -64,11 +62,8 @@ function App() {
 
   useEffect(() => {
     if(progress === 100) {
-        setShopVisible(false);
         setState(1);
         setStarted(true);
-        setBouquetVisible(true);
-        setSceneVisible(true);
     }
   }, [progress])
 
@@ -96,26 +91,25 @@ function App() {
           <EnvironmentMap preset="city"/>
           <CameraControl controlsRef={orbitRef} state={state} />
             <OrbitControls
-              enableZoom={false}
+              enableZoom={true}
               enableRotate={false}
               target={[-9, 4.5, 2.5]}
               ref={orbitRef}
             />
             <Bouquet
               move={move}
+              scale={[1.2,1.2,1.2]}
               setMove={setMove}
               setCurrentCategory={setCurrentCategory}
               setState={setState}
               setProductListVisible={setProductListVisible}
-              bouquetVisible={bouquetVisible}
               orbitRef={orbitRef}
-              position={[-8, 3.5, 42.5]}
+              position={[-9, 3.5, 2]}
             />
             <Scene
               scale={[0.08,0.08,0.08]}
               rotation={[0,-1.8,0]}
               orbitRef={orbitRef}
-              sceneVisible={sceneVisible}
               canvasRef={canvasRef}
               position={[-5, 0, 4]}
             />
@@ -126,13 +120,14 @@ function App() {
               move={move}
               setMove={setMove}
               scale={[1.3, 1.3, 1.3]}
-              position={[-9, 4.5, 22.5]}
+              position={[-9, 4.2, 22.5]}
             />
         </Canvas>
       </Suspense>
       {started && (
         progress === 100 &&
         <>
+          <SocialList  />
           <Sidebar
             setTrayVisible={setTrayVisible}
             selectedItems={selectedItems}
@@ -156,6 +151,7 @@ function App() {
       )}
       {selectedItems && (
         <ProductList
+        selectedItems={selectedItems}
           setSelectedItems={setSelectedItems}
           currentCategory={currentCategory}
           setState={setState}

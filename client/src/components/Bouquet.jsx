@@ -5,15 +5,14 @@ Command: npx gltfjsx@6.2.3 Bouquet.gltf
 
 import React, { useEffect, useRef, useState } from 'react'
 import { useGLTF } from '@react-three/drei'
-import { useFrame, useThree } from '@react-three/fiber';
+import { useFrame } from '@react-three/fiber';
 import { EffectComposer, Outline, Select, Selection } from '@react-three/postprocessing';
 import { gsap } from 'gsap';
 
 export function Bouquet(props) {
   const { nodes, materials } = useGLTF('/Bouquet.gltf')
-  const {move, setMove, bouquetVisible, setState, setProductListVisible, setCurrentCategory} = props
+  const {move, setState, setProductListVisible, setCurrentCategory} = props
   const bouquetRef = useRef();
-  const {scene} = useThree();
   const [outline, setOutline] = useState(false)
   useFrame(() => {
     if (bouquetRef.current) {
@@ -23,28 +22,8 @@ export function Bouquet(props) {
     else document.getElementById('root').style.cursor = "default"
   });
 
-  useEffect(() => {
-    if(bouquetVisible) Add();
-    else Remove();
-  }, [bouquetVisible])
-
-  const Remove = () => {
-    bouquetRef?.current?.traverse(child => {
-      if(child.isMesh) {
-        gsap.to(child.material, {
-          transparent: true,
-          opacity: 0,
-          duration: 2,
-          onComplete: () => {
-            scene.remove(bouquetRef.current)
-          }
-        })
-      }
-    })
-  }
 
   useEffect(() => {
-    console.log(move)
     let dir = 20;
     if(!move) dir = -20
     if(bouquetRef.current)
@@ -54,19 +33,6 @@ export function Bouquet(props) {
         ease: "power3.inOut"
       })
   }, [move]);
-
-  const Add = () => {
-    bouquetRef?.current?.traverse(child => {
-      if(child.isMesh) {
-        scene.add(bouquetRef.current)
-        gsap.to(child.material, {
-          transparent: false,
-          opacity: 1,
-          duration: 2,
-        })
-      }
-    })
-  }
 
   return (
     <Selection>

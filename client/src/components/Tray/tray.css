@@ -80,7 +80,7 @@ section{
     border-radius: 10px;
 }
 
-.order-summary {
+.order-summary {    
     padding: 10px 0;
     border-top: 1px solid grey;
 }
@@ -91,6 +91,7 @@ section{
 }
 
 .delete-button {
+    margin-top: 5px;
     padding: 3px 3px 2px 3px;
     background-color: rgb(255, 120, 120);
     border-radius: 5spx;

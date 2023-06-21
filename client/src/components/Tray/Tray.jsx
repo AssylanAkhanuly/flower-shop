@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./tray.css";
 import { gsap } from "gsap";
 import axios from "axios";
+import { AddItem } from "../ProductList/ProductList";
 function Tray({
   Switch,
   setTrayVisible,
@@ -72,9 +73,10 @@ function Tray({
                         <h3 className="order-list-item-desc-price">
                           {item.price} tg
                         </h3>
+                        <input className="order-list-item-desc-quantity" type="number" onChange={(e) => AddItem(selectedItems, setSelectedItems, item)} value={item.quantity} />
                         <button
                           onClick={() =>
-                            setSelectedItems(selectedItems.filter(filterItem => filterItem._id !== item._id))
+                            setSelectedItems(selectedItems.filter(filterEl => filterEl._id !== item._id))
                           }
                           className="delete-button"
                         >
@@ -96,7 +98,7 @@ function Tray({
                 <div className="order-summary-section">
                   <h3 className="order-summary-sum-title">Total</h3>
                   <h3 className="order-summary-sum-title">
-                    {selectedItems.reduce((acc, item) => acc + item.price, 0)}
+                    {selectedItems.reduce((acc, item) => acc + item.price * item.quantity, 0)}
                   </h3>
                 </div>
               </div>

@@ -7,21 +7,17 @@ import {
   Selection,
 } from "@react-three/postprocessing";
 import { gsap } from "gsap";
-import { useThree } from "@react-three/fiber";
 
 export function BouquetBox(props) {
   const { nodes, materials } = useGLTF("/BouquetBox.gltf");
   const {
     setState,
-    bouquetBoxVisible,
     move,
-    setMove,
     setCurrentCategory,
     setProductListVisible,
   } = props;
   const [outline, setOutline] = useState(false);
   const bouquetBoxRef = useRef();
-  const { scene } = useThree();
   useEffect(() => {
     let dir = 20;
     if (!move) dir = -20;
