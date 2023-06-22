@@ -1,0 +1,115 @@
+.sidebar {
+  position: relative;
+  overflow: hidden;
+  border-right: 0.5 solid grey;
+  min-height: 100vh;
+  background-color: var(--third-color);
+  transition: 1s;
+  width: 200px;
+  .top {
+    position: absolute;
+    left: 15px;
+    top: 0;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    .logo-img {
+      display: block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid grey;
+    }
+    .logo-name {
+      text-align: center;
+      font-size: var(--second-font);
+      font-weight: bold;
+      text-transform: uppercase;
+      color: var(--second-color);
+      transition: 1s;
+    }
+  }
+
+  hr {
+    height: 0;
+    border: 0.5 solid grey;
+  }
+
+  .center {
+     ul {
+      position: absolute;
+      left: 10px;
+      top: 70px;
+      right: 0;
+      li {
+        margin-top: 5px;
+        display: flex;
+        padding: 10px;
+        align-items: center;
+        justify-content: flex-start;
+        cursor: pointer;
+        gap: 10px;
+        &:hover {
+          background-color: white;
+          border-radius: 10px 0 0 10px;
+        }
+  
+        span {
+          display: block;
+          font-size: var(--second-font);
+          font-weight: 600;
+          color: black;
+          transition: 1s;
+        }
+        .navigation-icon {
+          font-size: var(--first-font);
+          color: var(--second-color);
+        }
+  
+        &.selected {
+          background-color: white;
+          border-radius: 10px 0 0 10px;
+        }
+      }
+    }
+     }
+
+  
+
+  &.hidden {
+  width: 55px;
+
+    transition: 1s;
+    .logo-name,
+    .header,
+    .color-option
+   {
+      transition: 1s;
+      border: 0px;
+    }
+    
+  }
+
+  @media only screen and (max-width: 768px) {
+    position: absolute;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 140px;
+    .top {
+      left: 5px;
+    }
+    .center {
+      ul {
+        left: 4px;
+      }
+    }
+    &.hidden {
+      width: 40px;
+    }
+  }
+
+}

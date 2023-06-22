@@ -1,0 +1,68 @@
+.widget {
+  display: flex;
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  justify-content: space-between;
+  background-color: var(--third-color);
+  .left, .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+
+    .title {
+        font-weight: bold;
+        font-size: var(--third-font);
+        color: grey;
+      }
+
+      .counter {
+        font-size: var(--first-font);
+        font-weight: 300;
+
+        .unit {
+          font-size: var(--second-font);
+
+          @media only screen and (max-width: 768px) {
+            display: none;
+          }
+        }
+      }
+
+      .link {
+        font-size: var(--quater-font);
+        border-bottom: 1px solid grey;
+        width: max-content;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .percentage {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.positive {
+            color: green;
+        }
+        &.negative {
+            color: red;
+        }
+
+        .indicator {
+          font-size: var(--second-font);
+        }
+      }
+      .icon {
+        font-size: var(--first-font);
+        padding: 4px;
+        color: black;
+        background-color: var(--second-color);
+        border-radius: 5px;
+        align-self: flex-end;
+      }
+  }
+  
+}

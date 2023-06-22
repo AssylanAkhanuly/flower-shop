@@ -16,7 +16,7 @@ const OrderSchema = new mongoose.Schema({
     status: {
         type: String,
         required: false,
-        default: "On progress"
+        default: "Pending"
     }
 }, {timestamps: true})
 

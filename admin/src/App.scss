@@ -1,0 +1,44 @@
+:root {
+    --first-color: #f5f5dc;
+    --second-color: #F5C5C4;
+    --third-color: #C4E0F5;
+    --forth-color: #FAF3D5;
+
+    --first-font: 28px;
+    --second-font: 16px;
+    --third-font: 14px;
+    --quater-font: 12px;
+}
+
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: var(--first-font);
+}
+h2 {
+    font-size: var(--second-font);
+}
+h3, p, span {
+    font-size: var(--third-font);
+}
+
+.box-shadow {
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+@media only screen and (max-width: 768px) {
+    :root {
+        --first-font: 20px;
+        --second-font: 10px;
+        --third-font: 8px;
+        --quater-font: 6px;
+    }
+}

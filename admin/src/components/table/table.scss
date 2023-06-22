@@ -1,0 +1,25 @@
+
+.table-head {
+    background-color: var(--third-color);
+}
+.cell-img {
+    width: 30px;
+    height: 50px;
+
+    object-fit: cover;
+    overflow: hidden;
+    border: 1px solid var(--second-color);
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    &.Pending {
+        color: goldenrod;
+        background-color: rgba(189, 189, 3, 0.103);
+    }
+    &.Finished {
+        color: green;
+        background-color: rgba(59, 255, 134, 0.103);
+    }
+}
